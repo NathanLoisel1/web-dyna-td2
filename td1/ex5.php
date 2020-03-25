@@ -7,7 +7,7 @@
     <body>
         <?php
             include("fonctions.php");
-            $table = createTable($_GET['lignes'], $_GET['colonnes']);
+            $table = createTable($_GET['lignes'] ?? '5', $_GET['colonnes'] ?? '5');
             echo $table;
         ?>
         

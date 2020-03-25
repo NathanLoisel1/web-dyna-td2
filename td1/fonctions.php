@@ -26,5 +26,58 @@ function createTable($lignes, $colonnes){
     }
     $table .= "</tbody></table>";
     return $table;    
+};
+
+function element($titre, $contenu, $niveau=1){
+    $html = "<h" . $niveau . ">" . $titre . "</h" . $niveau . "> <div>" . $contenu . "</div>";
+    return $html;
+}
+
+function parseElement($elements){
+    $code = '';
+    for($a=0; $a<count($elements); $a++){
+        $niveau = $elements[$a]['niveau'] ?? "1";
+        $code .= element($elements[$a]["titre"], $elements[$a]["contenu"], $niveau);
+    }
+    return $code;
+}
+
+function wordCount($phrase){
+    return str_word_count($phrase);
+}
+
+function charCount($s, $c=NULL){
+    if($c == null){
+            return strlen($s);
+    }
+    else{
+        return substr_count($s, $c);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function console_log( $data ){
+  echo '<script>';
+  echo 'console.log('. json_encode( $data ) .')';
+  echo '</script>';
 }
 ?>
