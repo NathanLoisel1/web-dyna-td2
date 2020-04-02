@@ -73,7 +73,7 @@ function charCount($s, $c=NULL){
 
 
 
-
+//pour le console.log()
 
 function console_log( $data ){
   echo '<script>';
