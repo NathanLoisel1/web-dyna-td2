@@ -10,6 +10,8 @@ class InscriptionsController extends ControllerBase{
 	}
     public function inscription(){	
 		$this->loadView('InscriptionsController/inscription.html');
-
+	}
+    public function do(){
+		$this->loadView('InscriptionsController/do.html');
 	}
 }
