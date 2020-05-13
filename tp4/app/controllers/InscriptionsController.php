@@ -1,8 +1,11 @@
 <?php
 namespace controllers;
- /**
- * Controller InscriptionsController
- **/
+
+use Ubiquity\utils\http\USession;
+use Ubiquity\utils\http\UResponse;
+use Ubiquity\orm\DAO;
+use Ubiquity\utils\http\URequest;
+
 class InscriptionsController extends ControllerBase{
 
 	public function index(){
@@ -12,6 +15,9 @@ class InscriptionsController extends ControllerBase{
 		$this->loadView('InscriptionsController/inscription.html');
 	}
     public function do(){
-		$this->loadView('InscriptionsController/do.html');
+        $var->Nom = $_POST["pseudo"];
+        $var->Email = $_POST["email"];
+        $var->DateHeure = date('H:i');
+        DAO::insert($var);
 	}
 }
