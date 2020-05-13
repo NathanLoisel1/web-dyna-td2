@@ -23,8 +23,14 @@ class InscriptionsController extends ControllerBase{
             echo "Confirmé, redirection...";
             UResponse::header("location" ,"/inscriptionsController"); 
         }
-        else{
+        else {
             echo "<div class='ui red message'><p>Votre inscription avec l'email " . $_POST["email"] . " n'a pas fonctionnée</p><a href='/inscriptionsController'>Retour à l'accueil</a></div>";
         }
 	}
+    public function inscriptions(){
+        $array = DAO::getAll(Inscription::class);
+        foreach(DAO::getAll(Inscription::class)as $result) {
+            echo $result;
+        };
+    }
 }
